@@ -7,7 +7,7 @@ export const userSlice = createSlice({
         email : ""
     },
     // actions
-    reducer : {
+    reducers : {
         addUser : (state , action ) => {
             // haka nbadel el state
             state.name = action.payload.name
