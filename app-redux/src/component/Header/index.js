@@ -12,7 +12,7 @@ import {useSelector} from "react-redux"
     );*/
 
 // this is methode with redux toolkit
-export default function Header() {
+/* export default function Header() {
     // yelzemni n3ayel el useSelector
     const {name} = useSelector((state) => state.user); 
 
@@ -23,3 +23,18 @@ export default function Header() {
         </div>
     );
 }
+*/
+
+// this is methode with redux toolkit with api
+export default function Header() {
+    // yelzemni n3ayel el useSelector
+    const { name } = useSelector((state) => state.user.userData); 
+
+    return (
+        <div className="header">
+            <h1>logo</h1>
+            <p>hello {name} </p>
+        </div>
+    );
+}
+

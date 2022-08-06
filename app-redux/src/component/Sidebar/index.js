@@ -19,7 +19,7 @@ import "./style.css"
 // this is methode with redux toolkit
 export default function Sidebar() {
 
-    // const {email} = useSelector((state) => state.user); 
+    const { email } = useSelector((state) => state.user.userData); 
 
     return (
         <div className="sidebar">
@@ -28,7 +28,7 @@ export default function Sidebar() {
                 <li>about</li>
                 <li>contact</li>
                 <li>blog</li>
-                <li>hello </li>
+                <li>hello {email} </li>
             </ul>
         </div>
     );
