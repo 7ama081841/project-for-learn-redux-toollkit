@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import {addUser}  from "../../redux/api";
+// import {addUser}  from "../../redux/api";
+import {addUser}  from "../../redux/userSlice";
 import "./style.css";
 
 // this is normal methode without redux
@@ -68,20 +69,27 @@ import "./style.css";
 }*/
 
 // this is methode with redux toolkit with api 
-// ----------------- methode 1 -------------------------------------------------
 export default function Form() {
     // na3mel useState lel redux
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-
-    // this is function work with redux tollkit
+    
     const dispatch = useDispatch();
-
+    
+    // ----------------- methode 1 -------------------------------------------------
+    /*const sumit = (e) => {
+        e.preventDefault();
+        // call function from slice
+        // moula7tha ken bech n7ot el dispatch fel prameter me n7othech el bara
+        addUser({ name, email }, dispatch); // yelzemni n7otou f object {}
+    };*/
+    
+    // ----------------- methode 2 -------------------------------------------------
     const sumit = (e) => {
         e.preventDefault();
         // call function from slice
-        // moula7tha ken bech njib donne mn api mene5demch bel dispatch
-        addUser({ name, email }, dispatch); // yelzemni n7otou f object {}
+        // moula7tha ken bech n7ot dispatch el bara me n7othech fel prameter
+        dispatch(addUser({ name, email })); // yelzemni n7otou f object {}
     };
 
     return (
